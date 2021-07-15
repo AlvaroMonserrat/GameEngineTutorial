@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1626292006 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/main.cpp
+	<iostream>
+	"Engine.h"
+
+1626294132 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Core/Engine.h
+	<iostream>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+
+1626317027 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Core/Engine.cpp
+	"Engine.h"
+	"TextureManager.h"
+
+1626315816 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Graphics/TextureManager.h
+	<string>
+	<SDL2/SDL.h>
+	<map>
+
+1626316966 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Graphics/TextureManager.cpp
+	"TextureManager.h"
+	"Engine.h"
+
