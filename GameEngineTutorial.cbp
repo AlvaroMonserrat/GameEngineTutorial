@@ -15,6 +15,9 @@
 					<Add option="-g" />
 					<Add directory="Core" />
 					<Add directory="Graphics" />
+					<Add directory="Physics" />
+					<Add directory="Object" />
+					<Add directory="Characters" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -26,6 +29,9 @@
 					<Add option="-O2" />
 					<Add directory="Core" />
 					<Add directory="Graphics" />
+					<Add directory="Physics" />
+					<Add directory="Object" />
+					<Add directory="Characters" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -39,10 +45,17 @@
 			<Add option="-lSDL2" />
 			<Add option="-lSDL2_image" />
 		</Linker>
+		<Unit filename="Characters/Character.h" />
+		<Unit filename="Characters/Warrior.cpp" />
+		<Unit filename="Characters/Warrior.h" />
 		<Unit filename="Core/Engine.cpp" />
 		<Unit filename="Core/Engine.h" />
 		<Unit filename="Graphics/TextureManager.cpp" />
 		<Unit filename="Graphics/TextureManager.h" />
+		<Unit filename="Object/GameObject.h" />
+		<Unit filename="Object/IObject.h" />
+		<Unit filename="Physics/Transform.h" />
+		<Unit filename="Physics/Vector2D.h" />
 		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>

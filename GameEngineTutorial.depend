@@ -8,16 +8,42 @@
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 
-1626317027 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Core/Engine.cpp
+1626487398 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Core/Engine.cpp
 	"Engine.h"
 	"TextureManager.h"
+	"Warrior.h"
 
-1626315816 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Graphics/TextureManager.h
+1626391470 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Graphics/TextureManager.h
 	<string>
 	<SDL2/SDL.h>
 	<map>
 
-1626316966 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Graphics/TextureManager.cpp
+1626391783 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Graphics/TextureManager.cpp
 	"TextureManager.h"
 	"Engine.h"
+
+1626355442 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Physics/Vector2D.h
+	<iostream>
+
+1626355781 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Physics/Transform.h
+	"Vector2D.h"
+
+1626487427 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Characters/Warrior.cpp
+	"Warrior.h"
+	"TextureManager.h"
+	"SDL2/SDL.h"
+
+1626401911 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Characters/Warrior.h
+	"Character.h"
+
+1626392638 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Characters/Character.h
+	"GameObject.h"
+	<string>
+
+1626401701 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Object/GameObject.h
+	"IObject.h"
+	"Transform.h"
+	<SDL2/SDL.h>
+
+1626367441 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Object/IObject.h
 

@@ -1,7 +1,10 @@
 #include "Engine.h"
 #include "TextureManager.h"
 
+#include "Warrior.h"
+
 Engine* Engine::s_Instance = nullptr;
+Warrior* player = nullptr;
 
 bool Engine::Init()
 {
@@ -30,10 +33,11 @@ bool Engine::Init()
         }
     }
 
-    if(!TextureManager::GetInstance()->Load("homer", "assets/images/homer.bmp"))
+    if(!TextureManager::GetInstance()->Load("player", "assets/images/idle.png"))
     {
         m_IsRunning = false;
     }
+    player = new Warrior(new Properties("player", 100, 200, 136, 96));
 
     return m_IsRunning;
 }
@@ -58,7 +62,7 @@ void Engine::Quit()
 
 void Engine::Update()
 {
-
+    player->Update(0);
 }
 
 void Engine::Render()
@@ -66,7 +70,7 @@ void Engine::Render()
     SDL_SetRenderDrawColor(m_Renderer, 124, 210, 254, 255);
     SDL_RenderClear(m_Renderer);
 
-    TextureManager::GetInstance()->Draw("homer", 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    player->Draw();
 
     SDL_RenderPresent(m_Renderer);
 }
