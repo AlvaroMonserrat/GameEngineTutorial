@@ -18,6 +18,10 @@
 					<Add directory="Physics" />
 					<Add directory="Object" />
 					<Add directory="Characters" />
+					<Add directory="Animation" />
+					<Add directory="Inputs" />
+					<Add directory="Timer" />
+					<Add directory="Map" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -32,6 +36,10 @@
 					<Add directory="Physics" />
 					<Add directory="Object" />
 					<Add directory="Characters" />
+					<Add directory="Animation" />
+					<Add directory="Inputs" />
+					<Add directory="Timer" />
+					<Add directory="Map" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -45,6 +53,8 @@
 			<Add option="-lSDL2" />
 			<Add option="-lSDL2_image" />
 		</Linker>
+		<Unit filename="Animation/Animation.cpp" />
+		<Unit filename="Animation/Animation.h" />
 		<Unit filename="Characters/Character.h" />
 		<Unit filename="Characters/Warrior.cpp" />
 		<Unit filename="Characters/Warrior.h" />
@@ -52,10 +62,17 @@
 		<Unit filename="Core/Engine.h" />
 		<Unit filename="Graphics/TextureManager.cpp" />
 		<Unit filename="Graphics/TextureManager.h" />
+		<Unit filename="Inputs/Input.cpp" />
+		<Unit filename="Inputs/Input.h" />
+		<Unit filename="Map/GameMap.h" />
+		<Unit filename="Map/Layer.h" />
 		<Unit filename="Object/GameObject.h" />
 		<Unit filename="Object/IObject.h" />
+		<Unit filename="Physics/RigidBody.h" />
 		<Unit filename="Physics/Transform.h" />
 		<Unit filename="Physics/Vector2D.h" />
+		<Unit filename="Timer/Timer.cpp" />
+		<Unit filename="Timer/Timer.h" />
 		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>

@@ -1,7 +1,8 @@
 #include "Engine.h"
 #include "TextureManager.h"
-
+#include "Input.h"
 #include "Warrior.h"
+#include "Timer.h"
 
 Engine* Engine::s_Instance = nullptr;
 Warrior* player = nullptr;
@@ -33,10 +34,9 @@ bool Engine::Init()
         }
     }
 
-    if(!TextureManager::GetInstance()->Load("player", "assets/images/idle.png"))
-    {
-        m_IsRunning = false;
-    }
+    if(!TextureManager::GetInstance()->Load("player", "assets/images/idle.png")) m_IsRunning = false;
+    if(!TextureManager::GetInstance()->Load("player_run", "assets/images/run.png")) m_IsRunning = false;
+
     player = new Warrior(new Properties("player", 100, 200, 136, 96));
 
     return m_IsRunning;
@@ -62,7 +62,8 @@ void Engine::Quit()
 
 void Engine::Update()
 {
-    player->Update(0);
+    float dt = Timer::GetInstance()->GetDeltaTime();
+    player->Update(dt);
 }
 
 void Engine::Render()
@@ -77,14 +78,7 @@ void Engine::Render()
 
 void Engine::Events()
 {
-    SDL_Event event;
-    SDL_PollEvent(&event);
-    switch(event.type)
-    {
-        case SDL_QUIT:
-            Quit();
-            break;
-    }
+    Input::GetInstance()->Listen();
 }
 
 Engine::Engine()

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Engine.h"
+#include "Timer.h"
 
 using namespace std;
 
@@ -13,6 +14,7 @@ int main(){
         Engine::GetInstance()->Events();
         Engine::GetInstance()->Update();
         Engine::GetInstance()->Render();
+        Timer::GetInstance()->Tick();
     }
 
     Engine::GetInstance()->Clean();
