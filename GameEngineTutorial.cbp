@@ -66,6 +66,8 @@
 		<Unit filename="Inputs/Input.h" />
 		<Unit filename="Map/GameMap.h" />
 		<Unit filename="Map/Layer.h" />
+		<Unit filename="Map/TileLayer.cpp" />
+		<Unit filename="Map/TileLayer.h" />
 		<Unit filename="Object/GameObject.h" />
 		<Unit filename="Object/IObject.h" />
 		<Unit filename="Physics/RigidBody.h" />
