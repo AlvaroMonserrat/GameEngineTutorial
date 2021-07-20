@@ -22,6 +22,7 @@
 					<Add directory="Inputs" />
 					<Add directory="Timer" />
 					<Add directory="Map" />
+					<Add directory="Vendor" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -40,6 +41,7 @@
 					<Add directory="Inputs" />
 					<Add directory="Timer" />
 					<Add directory="Map" />
+					<Add directory="Vendor" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -66,6 +68,8 @@
 		<Unit filename="Inputs/Input.h" />
 		<Unit filename="Map/GameMap.h" />
 		<Unit filename="Map/Layer.h" />
+		<Unit filename="Map/MapParser.cpp" />
+		<Unit filename="Map/MapParser.h" />
 		<Unit filename="Map/TileLayer.cpp" />
 		<Unit filename="Map/TileLayer.h" />
 		<Unit filename="Object/GameObject.h" />
@@ -75,6 +79,12 @@
 		<Unit filename="Physics/Vector2D.h" />
 		<Unit filename="Timer/Timer.cpp" />
 		<Unit filename="Timer/Timer.h" />
+		<Unit filename="Vendor/tinystr.cpp" />
+		<Unit filename="Vendor/tinystr.h" />
+		<Unit filename="Vendor/tinyxml.cpp" />
+		<Unit filename="Vendor/tinyxml.h" />
+		<Unit filename="Vendor/tinyxmlerror.cpp" />
+		<Unit filename="Vendor/tinyxmlparser.cpp" />
 		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>

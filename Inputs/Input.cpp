@@ -16,16 +16,16 @@ void Input::Listen()
     {
         switch(event.type)
         {
-            case SDL_QUIT:
-                Engine::GetInstance()->Quit();
+        case SDL_QUIT:
+            Engine::GetInstance()->Quit();
             break;
 
-            case SDL_KEYDOWN:
-                KeyDown();
+        case SDL_KEYDOWN:
+            KeyDown();
             break;
 
-            case SDL_KEYUP:
-                KeyUP();
+        case SDL_KEYUP:
+            KeyUP();
             break;
         }
     }

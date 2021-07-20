@@ -6,23 +6,24 @@
 class Input
 {
 
-    public:
-        static Input* GetInstance(){
-            return s_Instance = (s_Instance != nullptr) ? s_Instance : new Input();
-        }
+public:
+    static Input* GetInstance()
+    {
+        return s_Instance = (s_Instance != nullptr) ? s_Instance : new Input();
+    }
 
-        void Listen();
-        bool GetKeyDown(SDL_Scancode key);
+    void Listen();
+    bool GetKeyDown(SDL_Scancode key);
 
-    private:
-        Input();
-        void KeyUP();
-        void KeyDown();
+private:
+    Input();
+    void KeyUP();
+    void KeyDown();
 
 
-        const Uint8* m_KeyStates;
+    const Uint8* m_KeyStates;
 
-        static Input* s_Instance;
+    static Input* s_Instance;
 };
 
 #endif // INPUT_H

@@ -1,33 +1,36 @@
 # depslib dependency file v1.0
-1626555323 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/main.cpp
+1626666518 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/main.cpp
 	<iostream>
 	"Engine.h"
 	"Timer.h"
 
-1626294132 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Core/Engine.h
+1626747872 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Core/Engine.h
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
+	"GameMap.h"
 
-1626549868 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Core/Engine.cpp
+1626787063 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Core/Engine.cpp
 	"Engine.h"
 	"TextureManager.h"
 	"Input.h"
 	"Warrior.h"
+	"Timer.h"
+	"MapParser.h"
 
-1626391470 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Graphics/TextureManager.h
+1626746995 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Graphics/TextureManager.h
 	<string>
 	<SDL2/SDL.h>
 	<map>
 
-1626391783 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Graphics/TextureManager.cpp
+1626795335 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Graphics/TextureManager.cpp
 	"TextureManager.h"
 	"Engine.h"
 
-1626355442 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Physics/Vector2D.h
+1626666518 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Physics/Vector2D.h
 	<iostream>
 
-1626538279 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Physics/Transform.h
+1626666518 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Physics/Transform.h
 	"Vector2D.h"
 
 1626555669 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Characters/Warrior.cpp
@@ -36,23 +39,23 @@
 	"SDL2/SDL.h"
 	"Input.h"
 
-1626537870 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Characters/Warrior.h
+1626666518 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Characters/Warrior.h
 	"Character.h"
 	"Animation.h"
 	"RigidBody.h"
 
-1626392638 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Characters/Character.h
+1626666518 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Characters/Character.h
 	"GameObject.h"
 	<string>
 
-1626401701 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Object/GameObject.h
+1626666518 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Object/GameObject.h
 	"IObject.h"
 	"Transform.h"
 	<SDL2/SDL.h>
 
-1626367441 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Object/IObject.h
+1626666518 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Object/IObject.h
 
-1626527861 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Animation/Animation.h
+1626666518 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Animation/Animation.h
 	<string>
 	"SDL2/SDL.h"
 
@@ -60,19 +63,78 @@
 	"Animation.h"
 	"TextureManager.h"
 
-1626550135 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Physics/RigidBody.h
+1626666518 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Physics/RigidBody.h
 	"Vector2D.h"
 
-1626540099 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Inputs/Input.h
+1626666518 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Inputs/Input.h
 	"SDL2/SDL.h"
 
-1626540442 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Inputs/Input.cpp
+1626666518 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Inputs/Input.cpp
 	"Input.h"
 	"Engine.h"
 
-1626555128 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Timer/Timer.h
+1626666518 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Timer/Timer.h
 
 1626555553 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Timer/Timer.cpp
 	"Timer.h"
 	"SDL2/SDL.h"
+
+1626794537 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Map/TileLayer.cpp
+	"TileLayer.h"
+	"TextureManager.h"
+	<iostream>
+
+1626788262 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Map/TileLayer.h
+	"Layer.h"
+	<string>
+	<vector>
+
+1626666518 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Map/Layer.h
+
+1376507762 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Vendor/tinystr.cpp
+	"tinystr.h"
+
+1376507762 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Vendor/tinystr.h
+	<assert.h>
+	<string.h>
+
+1376507762 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Vendor/tinyxml.cpp
+	<ctype.h>
+	<sstream>
+	<iostream>
+	"tinyxml.h"
+
+1376507762 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Vendor/tinyxml.h
+	<ctype.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<string>
+	<iostream>
+	<sstream>
+	"tinystr.h"
+
+1376507762 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Vendor/tinyxmlerror.cpp
+	"tinyxml.h"
+
+1376507762 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Vendor/tinyxmlparser.cpp
+	<ctype.h>
+	<stddef.h>
+	"tinyxml.h"
+	<windows.h>
+
+1626791042 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Map/MapParser.cpp
+	"MapParser.h"
+
+1626727474 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Map/MapParser.h
+	<map>
+	<string>
+	"GameMap.h"
+	"TileLayer.h"
+	"tinyxml.h"
+
+1626750099 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Map/GameMap.h
+	<vector>
+	"Layer.h"
 
