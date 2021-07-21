@@ -23,6 +23,8 @@
 					<Add directory="Timer" />
 					<Add directory="Map" />
 					<Add directory="Vendor" />
+					<Add directory="Camera" />
+					<Add directory="Collision" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -42,6 +44,8 @@
 					<Add directory="Timer" />
 					<Add directory="Map" />
 					<Add directory="Vendor" />
+					<Add directory="Camera" />
+					<Add directory="Collision" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -57,9 +61,13 @@
 		</Linker>
 		<Unit filename="Animation/Animation.cpp" />
 		<Unit filename="Animation/Animation.h" />
+		<Unit filename="Camera/Camera.cpp" />
+		<Unit filename="Camera/Camera.h" />
 		<Unit filename="Characters/Character.h" />
 		<Unit filename="Characters/Warrior.cpp" />
 		<Unit filename="Characters/Warrior.h" />
+		<Unit filename="Collision/CollisionHandler.cpp" />
+		<Unit filename="Collision/CollisionHandler.h" />
 		<Unit filename="Core/Engine.cpp" />
 		<Unit filename="Core/Engine.h" />
 		<Unit filename="Graphics/TextureManager.cpp" />
@@ -74,6 +82,8 @@
 		<Unit filename="Map/TileLayer.h" />
 		<Unit filename="Object/GameObject.h" />
 		<Unit filename="Object/IObject.h" />
+		<Unit filename="Physics/Collider.h" />
+		<Unit filename="Physics/Point.h" />
 		<Unit filename="Physics/RigidBody.h" />
 		<Unit filename="Physics/Transform.h" />
 		<Unit filename="Physics/Vector2D.h" />

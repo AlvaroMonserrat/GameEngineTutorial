@@ -1,31 +1,34 @@
 # depslib dependency file v1.0
-1626666518 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/main.cpp
+1626883566 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/main.cpp
 	<iostream>
 	"Engine.h"
 	"Timer.h"
 
-1626747872 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Core/Engine.h
+1626835629 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Core/Engine.h
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	"GameMap.h"
 
-1626787063 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Core/Engine.cpp
+1626883618 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Core/Engine.cpp
 	"Engine.h"
 	"TextureManager.h"
 	"Input.h"
 	"Warrior.h"
 	"Timer.h"
 	"MapParser.h"
+	"Camera.h"
 
 1626746995 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Graphics/TextureManager.h
 	<string>
 	<SDL2/SDL.h>
 	<map>
 
-1626795335 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Graphics/TextureManager.cpp
+1626832934 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Graphics/TextureManager.cpp
 	"TextureManager.h"
 	"Engine.h"
+	"TextureManager.h"
+	"Camera.h"
 
 1626666518 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Physics/Vector2D.h
 	<iostream>
@@ -33,25 +36,30 @@
 1626666518 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Physics/Transform.h
 	"Vector2D.h"
 
-1626555669 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Characters/Warrior.cpp
+1626885696 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Characters/Warrior.cpp
 	"Warrior.h"
 	"TextureManager.h"
 	"SDL2/SDL.h"
 	"Input.h"
+	"Camera.h"
+	"CollisionHandler.h"
 
-1626666518 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Characters/Warrior.h
+1626891671 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Characters/Warrior.h
 	"Character.h"
 	"Animation.h"
 	"RigidBody.h"
+	"Collider.h"
+	"Vector2D.h"
 
 1626666518 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Characters/Character.h
 	"GameObject.h"
 	<string>
 
-1626666518 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Object/GameObject.h
+1626826373 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Object/GameObject.h
 	"IObject.h"
 	"Transform.h"
 	<SDL2/SDL.h>
+	"Point.h"
 
 1626666518 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Object/IObject.h
 
@@ -63,7 +71,7 @@
 	"Animation.h"
 	"TextureManager.h"
 
-1626666518 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Physics/RigidBody.h
+1626885968 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Physics/RigidBody.h
 	"Vector2D.h"
 
 1626666518 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Inputs/Input.h
@@ -137,4 +145,29 @@
 1626750099 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Map/GameMap.h
 	<vector>
 	"Layer.h"
+
+1626825693 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Camera/Camera.cpp
+	"Camera.h"
+
+1626825679 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Camera/Camera.h
+	"SDL2/SDL.h"
+	"Point.h"
+	"Vector2D.h"
+	"Engine.h"
+
+1626825643 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Physics/Point.h
+	<iostream>
+
+1626883191 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Collision/CollisionHandler.cpp
+	"CollisionHandler.h"
+	"Engine.h"
+
+1626836102 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Collision/CollisionHandler.h
+	"SDL2/SDL.h"
+	<vector>
+	"TileLayer.h"
+	"GameMap.h"
+
+1626836905 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Physics/Collider.h
+	"SDL2/SDL.h"
 

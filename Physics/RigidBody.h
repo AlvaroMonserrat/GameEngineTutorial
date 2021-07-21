@@ -9,8 +9,8 @@
 #define FORWARD 1
 #define BACKWARD -1
 
-#define UPWARD 1
-#define DOWNWARD -1
+#define UPWARD -1
+#define DOWNWARD 1
 
 class RigidBody
 {
@@ -22,64 +22,24 @@ public:
     }
 
     //Setter Gravity and Mass
-    inline void SetMass(float mass)
-    {
-        m_Mass = mass;
-    }
-    inline void SetGravity(float gravity)
-    {
-        m_Gravity = gravity;
-    }
-
+    inline void SetMass(float mass){ m_Mass = mass; }
+    inline void SetGravity(float gravity){ m_Gravity = gravity; }
     // Force
-    inline void ApplyForce(Vector2D F)
-    {
-        m_Force = F;
-    }
-    inline void ApplyForceX(float Fx)
-    {
-        m_Force.X = Fx;
-    }
-    inline void ApplyForceY(float Fy)
-    {
-        m_Force.Y = Fy;
-    }
-    inline void UnSetForce()
-    {
-        m_Force = Vector2D(0, 0);
-    }
+    inline void ApplyForce(Vector2D F){ m_Force = F; }
+    inline void ApplyForceX(float Fx){ m_Force.X = Fx;}
+    inline void ApplyForceY(float Fy){ m_Force.Y = Fy;}
+    inline void UnSetForce(){ m_Force = Vector2D(0, 0);}
 
     //Friction
-    inline void ApplyFriction(Vector2D Fr)
-    {
-        m_Friction = Fr;
-    }
-    inline void UnSetFriction()
-    {
-        m_Friction = Vector2D(0, 0);
-    }
+    inline void ApplyFriction(Vector2D Fr){ m_Friction = Fr; }
+    inline void UnSetFriction(){ m_Friction = Vector2D(0, 0); }
 
     //Getters
-    inline float GetMass()
-    {
-        return m_Mass;
-    }
-    inline Vector2D Position()
-    {
-        return m_Position;
-    }
-    inline Vector2D Velocity()
-    {
-        return m_Velocity;
-    }
-    inline Vector2D Accelaration()
-    {
-        return m_Acceleration;
-    }
-    inline Vector2D Force()
-    {
-        return m_Force;
-    };
+    inline float GetMass(){ return m_Mass; }
+    inline Vector2D Position(){ return m_Position; }
+    inline Vector2D Velocity(){ return m_Velocity; }
+    inline Vector2D Accelaration(){ return m_Acceleration; }
+    inline Vector2D Force(){ return m_Force; };
 
     //Update
     void Update(float dt)
