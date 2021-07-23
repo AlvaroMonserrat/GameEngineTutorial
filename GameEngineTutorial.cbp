@@ -61,6 +61,10 @@
 		</Linker>
 		<Unit filename="Animation/Animation.cpp" />
 		<Unit filename="Animation/Animation.h" />
+		<Unit filename="Animation/SeqAnimation.cpp" />
+		<Unit filename="Animation/SeqAnimation.h" />
+		<Unit filename="Animation/SpriteAnimation.cpp" />
+		<Unit filename="Animation/SpriteAnimation.h" />
 		<Unit filename="Camera/Camera.cpp" />
 		<Unit filename="Camera/Camera.h" />
 		<Unit filename="Characters/Character.h" />
