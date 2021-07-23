@@ -45,3 +45,27 @@ void Input::KeyDown()
 {
     m_KeyStates = SDL_GetKeyboardState(nullptr);
 }
+
+// return 1 or -1 according to the direction of the key pressed or 0 if nothing is pressed
+int Input::GetAxisKey(Axis axis)
+{
+    switch(axis)
+    {
+        case HORIZONTAL:
+            if(GetKeyDown(SDL_SCANCODE_D) || GetKeyDown(SDL_SCANCODE_RIGHT))
+                return 1;
+            if(GetKeyDown(SDL_SCANCODE_A) || GetKeyDown(SDL_SCANCODE_LEFT))
+                return -1;
+            break;
+
+        case VERTICAL:
+            if(GetKeyDown(SDL_SCANCODE_W) || GetKeyDown(SDL_SCANCODE_UP))
+                return 1;
+            if(GetKeyDown(SDL_SCANCODE_S) || GetKeyDown(SDL_SCANCODE_DOWN))
+                return -1;
+            break;
+        default:
+            return 0;
+    }
+
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UFT-8"?>
+<texture>
+	<texture id="player_run" source="assets/images/run.png" />
+	<texture id="player_idle" source="assets/images/idle.png" />
+	<texture id="player_jump" source="assets/images/jump.png" />	
+	<texture id="player_fall" source="assets/images/fall.png" />
+	<texture id="player_crouch" source="assets/images/crouch.png" />
+	<texture id="player_attack" source="assets/images/attack.png" />
+	
+	<texture id="bg" source="assets/images/bg.png" />
+
+</texture>

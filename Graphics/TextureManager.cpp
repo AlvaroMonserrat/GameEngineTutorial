@@ -2,11 +2,8 @@
 #include "Engine.h"
 #include "TextureManager.h"
 #include "Camera.h"
-
-TextureManager::TextureManager()
-{
-
-}
+#include "tinyxml.h"
+#include <iostream>
 
 TextureManager* TextureManager::s_Instance = nullptr;
 
@@ -43,6 +40,33 @@ bool TextureManager::Load(std::string id, std::string filename)
 
 }
 
+bool TextureManager::ParseTexture(std::string source)
+{
+    TiXmlDocument xml;
+    xml.LoadFile(source);
+
+    if(xml.Error())
+    {
+        std::cout << "Failed to load " << source << std::endl;
+        return false;
+    }
+
+    TiXmlElement* root = xml.RootElement();
+    for(TiXmlElement* e = root->FirstChildElement(); e != nullptr; e = e->NextSiblingElement())
+    {
+        if(e->Value() == std::string("texture"))
+        {
+            std::string id = e->Attribute("id");
+            std::string src = e->Attribute("source");
+
+            if(!Load(id, src))
+                return false;
+        }
+
+    }
+    return true;
+}
+
 void TextureManager::Drop(std::string id)
 {
     SDL_DestroyTexture(m_TextureMap[id]);
@@ -62,13 +86,13 @@ void TextureManager::Clean()
 
 }
 
-void TextureManager::Draw(std::string id, int x, int y, int width, int height, SDL_RendererFlip flip)
+void TextureManager::Draw(std::string id, int x, int y, int width, int height, float scaleX, float scaleY, float scrollRatio, SDL_RendererFlip flip)
 {
     SDL_Rect srcRect = {0, 0, width, height};
 
-    Vector2D cam = Camera::GetInstance()->GetPosition() * 0.5;
+    Vector2D cam = Camera::GetInstance()->GetPosition() * scrollRatio;
 
-    SDL_Rect dstRect = {x - cam.X, y - cam.Y, width, height};
+    SDL_Rect dstRect = {x - cam.X, y - cam.Y, width*scaleX, height*scaleY};
 
     SDL_RenderCopyEx(Engine::GetInstance()->GetRenderer(), m_TextureMap[id], &srcRect, &dstRect, 0, nullptr, flip);
 
@@ -77,7 +101,14 @@ void TextureManager::Draw(std::string id, int x, int y, int width, int height, S
 
 void TextureManager::DrawFrame(std::string id, int x, int y, int width, int height, int row, int frame, SDL_RendererFlip flip)
 {
-    SDL_Rect srcRect = {width*frame, height*(row-1), width, height};
+//    std::cout << "ID: " << id << std::endl;
+//    std::cout << "x: " << x << std::endl;
+//    std::cout << "y: " << y << std::endl;
+//    std::cout << "frame: " <<frame << std::endl;
+//    std::cout << "width: " <<width << std::endl;
+//    std::cout << "height: " << height << std::endl;
+
+    SDL_Rect srcRect = {width*frame, height*(row), width, height};
     Vector2D cam = Camera::GetInstance()->GetPosition();
 
 

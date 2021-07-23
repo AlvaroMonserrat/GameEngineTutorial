@@ -7,18 +7,20 @@ using namespace std;
 
 int main()
 {
+    Engine* gameEngine = Engine::GetInstance();
+    Timer* gameTimer = Timer::GetInstance();
 
-    Engine::GetInstance()->Init();
+    gameEngine->Init();
 
-    while(Engine::GetInstance()->isRunning())
+    while(gameEngine->isRunning())
     {
-        Engine::GetInstance()->Events();
-        Engine::GetInstance()->Update();
-        Engine::GetInstance()->Render();
-        Timer::GetInstance()->Tick();
+        gameEngine->Events();
+        gameEngine->Update();
+        gameEngine->Render();
+        gameTimer->Tick();
     }
 
-    Engine::GetInstance()->Clean();
+    gameEngine->Clean();
 
     return 0;
 }
