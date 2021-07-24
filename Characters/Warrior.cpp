@@ -24,10 +24,10 @@ Warrior::Warrior(Properties* props) : Character(props)
     m_Collider->SetBuffer(-60, -20, 0, 0);
 
     m_RigidBody = new RigidBody();
-    m_RigidBody->SetGravity(3.0f);
+    m_RigidBody->SetGravity(5.0f);
 
-    m_Animation = new Animation();
-    m_Animation->SetPros(m_TextureID, 1, 6, 80);
+    m_Animation = new SpriteAnimation();
+    m_Animation->SetProps(m_TextureID, 1, 6, 80);
 }
 
 void Warrior::Draw()
@@ -38,7 +38,7 @@ void Warrior::Draw()
 //    box.x -= cam.X;
 //    box.y -= cam.Y;
 //    SDL_RenderDrawRect(Engine::GetInstance()->GetRenderer(), &box);
-    m_Animation->Draw(m_Transform->X, m_Transform->Y, m_Width, m_Height, m_Flip);
+    m_Animation->Draw(m_Transform->X, m_Transform->Y, m_Width, m_Height, 1, 1, m_Flip);
 
 }
 
@@ -148,32 +148,32 @@ void Warrior::Update(float dt)
     m_Origin->Y = m_Transform->Y + m_Height/2;
 
     AnimationState();
-    m_Animation->Update();
+    m_Animation->Update(dt);
 }
 
 void Warrior::AnimationState()
 {
     //idling
-    m_Animation->SetPros("player_idle", 0, 6, 100);
+    m_Animation->SetProps("player_idle", 0, 6, 100);
 
     //running
     if(m_IsRunning)
-        m_Animation->SetPros("player_run", 0, 8, 100);
+        m_Animation->SetProps("player_run", 0, 8, 100);
 
     //crouching
     if(m_IsCrouching)
-        m_Animation->SetPros("player_crouch", 0, 2, 200);
+        m_Animation->SetProps("player_crouch", 0, 2, 200);
 
     //jumping
     if(m_IsJumping)
-        m_Animation->SetPros("player_jump", 0, 4, 200);
+        m_Animation->SetProps("player_jump", 0, 4, 200);
 
     //falling
     if(m_IsFalling)
-        m_Animation->SetPros("player_fall", 0, 2, 350);
+        m_Animation->SetProps("player_fall", 0, 2, 350);
 
     if(m_IsAttacking)
-        m_Animation->SetPros("player_attack", 0, 8, 120);
+        m_Animation->SetProps("player_attack", 0, 8, 120);
 
 }
 

@@ -2,9 +2,11 @@
 #define ENGINE_H
 
 #include <iostream>
+#include <vector>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include "GameMap.h"
+#include "GameObject.h"
 
 #define SCREEN_WIDTH 960
 #define SCREEN_HEIGHT 640
@@ -41,6 +43,8 @@ private:
     SDL_Surface* m_SurfaceScreen;
 
     static Engine* s_Instance;
+
+    std::vector<GameObject*> m_GameObjects;
 };
 
 #endif // ENGINE_H

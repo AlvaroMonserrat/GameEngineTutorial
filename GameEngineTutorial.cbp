@@ -59,7 +59,6 @@
 			<Add option="-lSDL2" />
 			<Add option="-lSDL2_image" />
 		</Linker>
-		<Unit filename="Animation/Animation.cpp" />
 		<Unit filename="Animation/Animation.h" />
 		<Unit filename="Animation/SeqAnimation.cpp" />
 		<Unit filename="Animation/SeqAnimation.h" />
@@ -68,6 +67,8 @@
 		<Unit filename="Camera/Camera.cpp" />
 		<Unit filename="Camera/Camera.h" />
 		<Unit filename="Characters/Character.h" />
+		<Unit filename="Characters/Enemy.cpp" />
+		<Unit filename="Characters/Enemy.h" />
 		<Unit filename="Characters/Warrior.cpp" />
 		<Unit filename="Characters/Warrior.h" />
 		<Unit filename="Collision/CollisionHandler.cpp" />

@@ -7,7 +7,6 @@
 #include "Camera.h"
 
 Engine* Engine::s_Instance = nullptr;
-Warrior* player = nullptr;
 
 bool Engine::Init()
 {
@@ -15,7 +14,6 @@ bool Engine::Init()
     //Bandera de inicialización
     m_IsRunning = true;
 
-    std::cout << "AQUI OK" << std::endl;
     if( SDL_Init(SDL_INIT_VIDEO) != 0 && IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG) != 0)
     {
         SDL_Log("Error al iniciar SDL libraries: %s", SDL_GetError());
@@ -59,18 +57,26 @@ bool Engine::Init()
 
     if(!TextureManager::GetInstance()->ParseTexture("assets/texture.tml")) m_IsRunning = false;
 
-    player = new Warrior(new Properties("player", 100, 200, 136, 96));
+
+    Warrior* player = new Warrior(new Properties("player", 100, 200, 136, 96));
+
+    m_GameObjects.push_back(player);
 
     Camera::GetInstance()->SetTarget(player->GetOrigin());
-
-
 
     return m_IsRunning;
 }
 
 bool Engine::Clean()
 {
+
+    for(unsigned int i=0; i!=m_GameObjects.size(); i++)
+    {
+        m_GameObjects[i]->Clean();
+    }
+
     TextureManager::GetInstance()->Clean();
+    MapParser::GetInstance()->Clean();
 
     SDL_DestroyRenderer(m_Renderer);
     SDL_DestroyWindow(m_Window);
@@ -93,7 +99,12 @@ void Engine::Update()
 {
     float dt = Timer::GetInstance()->GetDeltaTime();
     m_LevelMap->Update();
-    player->Update(dt);
+
+    for(unsigned int i=0; i!=m_GameObjects.size(); i++)
+    {
+        m_GameObjects[i]->Update(dt);
+    }
+
     Camera::GetInstance()->Update(dt);
 }
 
@@ -105,7 +116,11 @@ void Engine::Render()
     TextureManager::GetInstance()->Draw("bg", 0, 0, 1980, 1080, 1.5, 1.5, 0.4);
     m_LevelMap->Render();
 
-    player->Draw();
+    for(unsigned int i=0; i!=m_GameObjects.size(); i++)
+    {
+        m_GameObjects[i]->Draw();
+    }
+
 
 
     SDL_RenderPresent(m_Renderer);

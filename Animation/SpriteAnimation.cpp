@@ -1,7 +1,8 @@
 #include "SpriteAnimation.h"
+#include "TextureManager.h"
+#include "SDL2/SDL.h"
 
 SpriteAnimation::SpriteAnimation(bool repeat) : Animation(repeat){}
-
 
 void SpriteAnimation::Draw(float x, float y, int width, int height, float xScale, float yScale, SDL_RendererFlip flip)
 {
@@ -11,10 +12,10 @@ void SpriteAnimation::Draw(float x, float y, int width, int height, float xScale
 
 void SpriteAnimation::Update(float dt)
 {
-    m_CurrentFrame = (SDL_GetTicks() / m_AnimSpeed) % m_FrameCount;
+    m_CurrentFrame = (SDL_GetTicks() / m_Speed) % m_FrameCount;
 }
 
-void SpriteAnimation::SetPros(std::string textureID, int spriteRow, int frameCount, int speed)
+void SpriteAnimation::SetProps(std::string textureID, int spriteRow, int frameCount, int speed)
 {
     m_Speed = speed;
     m_TextureID = textureID;

@@ -12,7 +12,7 @@ class SpriteAnimation : public Animation
 
         virtual void Update(float dt);
         void Draw(float x, float y, int spriteWidth, int spriteHeight, float xScale=1, float yScale=1, SDL_RendererFlip flip=SDL_FLIP_NONE);
-        void SetProps(std::string textureID, int spriteRow, int);
+        void SetProps(std::string textureID, int spriteRow, int frameCount, int speed);
 
 
     private:
