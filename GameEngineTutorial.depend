@@ -12,11 +12,12 @@
 	"GameMap.h"
 	"GameObject.h"
 
-1627147224 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Core/Engine.cpp
+1627305160 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Core/Engine.cpp
 	"Engine.h"
 	"TextureManager.h"
 	"Input.h"
 	"Warrior.h"
+	"Enemy.h"
 	"Timer.h"
 	"MapParser.h"
 	"Camera.h"
@@ -137,7 +138,7 @@
 	"tinyxml.h"
 	<windows.h>
 
-1626791042 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Map/MapParser.cpp
+1627149134 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Map/MapParser.cpp
 	"MapParser.h"
 
 1626727474 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Map/MapParser.h
@@ -186,7 +187,7 @@
 	<SDL2/SDL.h>
 	"Animation.h"
 
-1627140099 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Animation/SeqAnimation.cpp
+1627149774 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Animation/SeqAnimation.cpp
 	"SeqAnimation.h"
 	<iostream>
 	"tinyxml.h"
@@ -199,7 +200,7 @@
 	"SDL2/SDL.h"
 	"Animation.h"
 
-1627147313 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Characters/Enemy.cpp
+1627305258 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Characters/Enemy.cpp
 	"Enemy.h"
 	"Camera.h"
 	"CollisionHandler.h"

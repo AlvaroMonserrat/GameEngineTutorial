@@ -12,12 +12,17 @@ Enemy::Enemy(Properties* props) :Character(props)
 
     m_Animation = new SeqAnimation(false);
     m_Animation->Parse("assets/animation.aml");
-    m_Animation->SetCurrentSeq("boss_appear");
+    m_Animation->SetCurrentSeq("boss_idle");
 }
 
 void Enemy::Draw()
 {
-    m_Animation->DrawFrame(m_Transform->X, m_Transform->Y, 0.3f, 0.3f, m_Flip);
+    Vector2D cam = Camera::GetInstance()->GetPosition();
+//    SDL_Rect box = m_Collider->Get();
+//    box.x -= cam.X;
+//    box.y -= cam.Y;
+//    SDL_RenderDrawRect(Engine::GetInstance()->GetRenderer(), &box);
+    m_Animation->DrawFrame(m_Collider->Get().x - cam.X, m_Collider->Get().y - cam.Y, 0.3f, 0.3f, m_Flip);
 }
 
 void Enemy::Update(float dt)
@@ -25,7 +30,7 @@ void Enemy::Update(float dt)
     //X-Axis movements
     m_RigidBody->Update(dt);
     m_LastSafePosition.X = m_Transform->X;
-    m_Collider->Set(m_Transform->X, m_Transform->Y, 140, 100);
+    m_Collider->Set(m_Transform->X, m_Transform->Y, 150, 120);
 
     if(CollisionHandler::GetInstance()->MapCollision(m_Collider->Get()))
     {
@@ -36,7 +41,7 @@ void Enemy::Update(float dt)
     m_RigidBody->Update(dt);
     m_LastSafePosition.Y = m_Transform->Y;
     m_Transform->Y += m_RigidBody->Position().Y;
-    m_Collider->Set(m_Transform->X, m_Transform->Y, 140, 100);
+    m_Collider->Set(m_Transform->X, m_Transform->Y, 150, 120);
 
     if(CollisionHandler::GetInstance()->MapCollision(m_Collider->Get()))
     {

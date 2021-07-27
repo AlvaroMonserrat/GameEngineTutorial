@@ -36,14 +36,7 @@ bool MapParser::Parse(std::string id, std::string source)
         }
 
     }
-    std::cout << "FirstID: " << tilesets[0].FirstID << std::endl;
-    std::cout << "LastID: " << tilesets[0].LastID << std::endl;
-    std::cout << "RowCount: " << tilesets[0].RowCount << std::endl;
-    std::cout << "ColCount: " << tilesets[0].ColCount << std::endl;
-    std::cout << "TileCount: " << tilesets[0].TileCount << std::endl;
-    std::cout << "TileSize: " << tilesets[0].TileSize << std::endl;
-    std::cout << "Name: " << tilesets[0].Name << std::endl;
-    std::cout << "Source: " << tilesets[0].Source << std::endl;
+
 
     // Parse Layers
     GameMap* gamemap = new GameMap();

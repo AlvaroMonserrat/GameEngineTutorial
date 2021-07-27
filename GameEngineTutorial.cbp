@@ -25,6 +25,7 @@
 					<Add directory="Vendor" />
 					<Add directory="Camera" />
 					<Add directory="Collision" />
+					<Add directory="Factory" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -46,6 +47,7 @@
 					<Add directory="Vendor" />
 					<Add directory="Camera" />
 					<Add directory="Collision" />
+					<Add directory="Factory" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -75,6 +77,8 @@
 		<Unit filename="Collision/CollisionHandler.h" />
 		<Unit filename="Core/Engine.cpp" />
 		<Unit filename="Core/Engine.h" />
+		<Unit filename="Factory/ObjectFactory.cpp" />
+		<Unit filename="Factory/ObjectFactory.h" />
 		<Unit filename="Graphics/TextureManager.cpp" />
 		<Unit filename="Graphics/TextureManager.h" />
 		<Unit filename="Inputs/Input.cpp" />

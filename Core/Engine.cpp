@@ -2,6 +2,7 @@
 #include "TextureManager.h"
 #include "Input.h"
 #include "Warrior.h"
+#include "Enemy.h"
 #include "Timer.h"
 #include "MapParser.h"
 #include "Camera.h"
@@ -58,9 +59,13 @@ bool Engine::Init()
     if(!TextureManager::GetInstance()->ParseTexture("assets/texture.tml")) m_IsRunning = false;
 
 
+
     Warrior* player = new Warrior(new Properties("player", 100, 200, 136, 96));
 
+    Enemy* boss = new Enemy(new Properties("boss_idle", 800, 100, 600, 500, SDL_FLIP_HORIZONTAL));
+
     m_GameObjects.push_back(player);
+    m_GameObjects.push_back(boss);
 
     Camera::GetInstance()->SetTarget(player->GetOrigin());
 
@@ -100,6 +105,7 @@ void Engine::Update()
     float dt = Timer::GetInstance()->GetDeltaTime();
     m_LevelMap->Update();
 
+
     for(unsigned int i=0; i!=m_GameObjects.size(); i++)
     {
         m_GameObjects[i]->Update(dt);
@@ -116,9 +122,12 @@ void Engine::Render()
     TextureManager::GetInstance()->Draw("bg", 0, 0, 1980, 1080, 1.5, 1.5, 0.4);
     m_LevelMap->Render();
 
+
     for(unsigned int i=0; i!=m_GameObjects.size(); i++)
     {
+
         m_GameObjects[i]->Draw();
+
     }
 
 

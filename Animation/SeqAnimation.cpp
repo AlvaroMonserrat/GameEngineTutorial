@@ -8,6 +8,16 @@ SeqAnimation::SeqAnimation(bool repeat) : Animation(repeat){}
 
 void SeqAnimation::DrawFrame(float x, float y, float xScale, float yScale, SDL_RendererFlip flip)
 {
+//    std::cout << "x: " << x<< std::endl;
+//    std::cout << "y: " << y << std::endl;
+//    std::cout << "xScale: " << xScale << std::endl;
+//    std::cout << "yScale: " << yScale << std::endl;
+//
+//    std::cout << "m_CurrentFrame: " << m_CurrentFrame << std::endl;
+//    std::cout << "textureID: " << m_CurrentSeq.TextureIDs[m_CurrentFrame] << std::endl;
+//    std::cout << "Width: " << m_CurrentSeq.Width << std::endl;
+//    std::cout << "Height: " << m_CurrentSeq.Height << std::endl;
+
     TextureManager::GetInstance()->Draw(
         m_CurrentSeq.TextureIDs[m_CurrentFrame],
         x,
@@ -64,14 +74,16 @@ void SeqAnimation::Parse(std::string source)
         if(e->Value() == std::string("sequence"))
         {
             Sequence seq;
+
             std::string seqID = e->Attribute("id");
             e->Attribute("speed", &seq.Speed);
             e->Attribute("width", &seq.Width);
             e->Attribute("height", &seq.Height);
             e->Attribute("frameCount", &seq.FrameCount);
 
-            for(TiXmlElement* frame=e->FirstChildElement(); frame!=nullptr; e=e->NextSiblingElement())
+            for(TiXmlElement* frame=e->FirstChildElement(); frame!=nullptr; frame=frame->NextSiblingElement())
             {
+                std::cout << "d: " << frame->Attribute("textureID") << std::endl;
                 seq.TextureIDs.push_back(frame->Attribute("textureID"));
             }
 
@@ -79,6 +91,7 @@ void SeqAnimation::Parse(std::string source)
         }
 
     }
+
 
 }
 

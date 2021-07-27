@@ -8,5 +8,12 @@
 	<texture id="player_attack" source="assets/images/attack.png" />
 	
 	<texture id="bg" source="assets/images/bg.png" />
+	
+	<texture id="boss_idle1" source="assets/images/boss/idle_1.png"/>
+	<texture id="boss_idle2" source="assets/images/boss/idle_2.png"/>
+	<texture id="boss_idle3" source="assets/images/boss/idle_3.png"/>
+	<texture id="boss_idle4" source="assets/images/boss/idle_4.png"/>
+	<texture id="boss_idle5" source="assets/images/boss/idle_5.png"/>
+	<texture id="boss_idle6" source="assets/images/boss/idle_6.png"/>
 
 </texture>

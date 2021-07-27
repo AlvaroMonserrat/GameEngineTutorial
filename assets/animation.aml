@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UFT-8"?>
-<animation>
+<animations>
 
-	<sequence id="boss_idle" frameCount="6" speed="100" width="460" height="352"/>
+	<sequence id="boss_idle" frameCount="6" speed="100" width="600" height="500">
 		<frame textureID="boss_idle1"/>
 		<frame textureID="boss_idle2"/>
 		<frame textureID="boss_idle3"/>
 		<frame textureID="boss_idle4"/>
 		<frame textureID="boss_idle5"/>
 		<frame textureID="boss_idle6"/>
-</animation>
+	</sequence>
+</animations>
