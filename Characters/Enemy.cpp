@@ -28,7 +28,7 @@ void Enemy::Draw()
 //    box.y -= cam.Y;
 //    SDL_RenderDrawRect(Engine::GetInstance()->GetRenderer(), &box);
     m_Animation->DrawFrame(m_Collider->Get().x - cam.X, m_Collider->Get().y - cam.Y, 0.3f, 0.3f, m_Flip);
-    m_Collider->Draw();
+    //m_Collider->Draw();
 
 }
 

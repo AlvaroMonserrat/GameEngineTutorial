@@ -4,6 +4,7 @@
 #include <SDL2/SDL.h>
 #include <iostream>
 #include "GameState.h"
+#include "Engine.h"
 
 class Menu : public GameState
 {
@@ -19,9 +20,6 @@ class Menu : public GameState
         static void Settings();
         static void Editor();
         static void Quit();
-
-    private:
-        SDL_Renderer* m_Ctxt;
 
 };
 

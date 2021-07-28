@@ -1,6 +1,7 @@
 #ifndef GAMESTATE_H
 #define GAMESTATE_H
 
+#include <SDL2/SDL.h>
 
 class GameState
 {
@@ -9,6 +10,9 @@ class GameState
         virtual bool Exit() = 0;
         virtual void Update() = 0;
         virtual void Render() = 0;
+    protected:
+        SDL_Renderer* m_Ctxt;
+
 };
 
 #endif // GAMESTATE_H

@@ -43,7 +43,7 @@
 1626666518 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Physics/Transform.h
 	"Vector2D.h"
 
-1627411738 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Characters/Warrior.cpp
+1627440210 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Characters/Warrior.cpp
 	"Warrior.h"
 	"TextureManager.h"
 	"SDL2/SDL.h"
@@ -205,7 +205,7 @@
 	"SDL2/SDL.h"
 	"Animation.h"
 
-1627412607 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Characters/Enemy.cpp
+1627440210 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Characters/Enemy.cpp
 	"Enemy.h"
 	"Camera.h"
 	"CollisionHandler.h"
@@ -230,13 +230,25 @@
 	<functional>
 	"GameObject.h"
 
-1627425017 /home/amonserrat/Documents/C++2021/GameEngineTutorial/States/GameState.h
+1627496460 /home/amonserrat/Documents/C++2021/GameEngineTutorial/States/GameState.h
+	<SDL2/SDL.h>
 
-1627439280 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/States/Menu.cpp
+1627488852 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/States/Menu.cpp
 	"Menu.h"
 
-1627439423 /home/amonserrat/Documents/C++2021/GameEngineTutorial/States/Menu.h
+1627496488 /home/amonserrat/Documents/C++2021/GameEngineTutorial/States/Menu.h
 	<SDL2/SDL.h>
 	<iostream>
 	"GameState.h"
+	"Engine.h"
+
+1627496548 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/States/Play.cpp
+	"Play.h"
+	"Engine.h"
+
+1627496526 /home/amonserrat/Documents/C++2021/GameEngineTutorial/States/Play.h
+	"GameState.h"
+	"GameMap.h"
+	"GameObject.h"
+	"Engine.h"
 

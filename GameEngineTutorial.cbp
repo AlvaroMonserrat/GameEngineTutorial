@@ -103,6 +103,8 @@
 		<Unit filename="States/GameState.h" />
 		<Unit filename="States/Menu.cpp" />
 		<Unit filename="States/Menu.h" />
+		<Unit filename="States/Play.cpp" />
+		<Unit filename="States/Play.h" />
 		<Unit filename="Timer/Timer.cpp" />
 		<Unit filename="Timer/Timer.h" />
 		<Unit filename="Vendor/tinystr.cpp" />
