@@ -1,7 +1,12 @@
 #include "Enemy.h"
 #include "Camera.h"
 #include "CollisionHandler.h"
+#include "ObjectFactory.h"
 #include <iostream>
+
+
+static Registrar<Enemy> registrar("BOSS");
+
 
 Enemy::Enemy(Properties* props) :Character(props)
 {
@@ -23,6 +28,8 @@ void Enemy::Draw()
 //    box.y -= cam.Y;
 //    SDL_RenderDrawRect(Engine::GetInstance()->GetRenderer(), &box);
     m_Animation->DrawFrame(m_Collider->Get().x - cam.X, m_Collider->Get().y - cam.Y, 0.3f, 0.3f, m_Flip);
+    m_Collider->Draw();
+
 }
 
 void Enemy::Update(float dt)

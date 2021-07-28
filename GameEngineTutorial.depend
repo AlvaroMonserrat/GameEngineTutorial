@@ -4,15 +4,16 @@
 	"Engine.h"
 	"Timer.h"
 
-1627146902 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Core/Engine.h
+1627425039 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Core/Engine.h
 	<iostream>
 	<vector>
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	"GameMap.h"
 	"GameObject.h"
+	"GameState.h"
 
-1627305160 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Core/Engine.cpp
+1627412693 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Core/Engine.cpp
 	"Engine.h"
 	"TextureManager.h"
 	"Input.h"
@@ -21,6 +22,7 @@
 	"Timer.h"
 	"MapParser.h"
 	"Camera.h"
+	"ObjectFactory.h"
 
 1627010271 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Graphics/TextureManager.h
 	<string>
@@ -41,13 +43,14 @@
 1626666518 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Physics/Transform.h
 	"Vector2D.h"
 
-1627145205 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Characters/Warrior.cpp
+1627411738 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Characters/Warrior.cpp
 	"Warrior.h"
 	"TextureManager.h"
 	"SDL2/SDL.h"
 	"Input.h"
 	"Camera.h"
 	"CollisionHandler.h"
+	"ObjectFactory.h"
 
 1627145248 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Characters/Warrior.h
 	"Character.h"
@@ -174,8 +177,10 @@
 	"TileLayer.h"
 	"GameMap.h"
 
-1626836905 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Physics/Collider.h
+1627411399 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Physics/Collider.h
 	"SDL2/SDL.h"
+	"Camera.h"
+	"CollisionHandler.h"
 
 1627139283 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Animation/SpriteAnimation.cpp
 	"SpriteAnimation.h"
@@ -187,7 +192,7 @@
 	<SDL2/SDL.h>
 	"Animation.h"
 
-1627149774 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Animation/SeqAnimation.cpp
+1627308583 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Animation/SeqAnimation.cpp
 	"SeqAnimation.h"
 	<iostream>
 	"tinyxml.h"
@@ -200,10 +205,11 @@
 	"SDL2/SDL.h"
 	"Animation.h"
 
-1627305258 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Characters/Enemy.cpp
+1627412607 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Characters/Enemy.cpp
 	"Enemy.h"
 	"Camera.h"
 	"CollisionHandler.h"
+	"ObjectFactory.h"
 	<iostream>
 
 1627145041 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Characters/Enemy.h
@@ -212,4 +218,25 @@
 	"Vector2D.h"
 	"RigidBody.h"
 	"SeqAnimation.h"
+
+1627409112 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Factory/ObjectFactory.cpp
+	"ObjectFactory.h"
+	"Enemy.h"
+	"Warrior.h"
+
+1627411780 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Factory/ObjectFactory.h
+	<map>
+	<string>
+	<functional>
+	"GameObject.h"
+
+1627425017 /home/amonserrat/Documents/C++2021/GameEngineTutorial/States/GameState.h
+
+1627439280 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/States/Menu.cpp
+	"Menu.h"
+
+1627439423 /home/amonserrat/Documents/C++2021/GameEngineTutorial/States/Menu.h
+	<SDL2/SDL.h>
+	<iostream>
+	"GameState.h"
 

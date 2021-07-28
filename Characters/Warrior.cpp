@@ -4,6 +4,9 @@
 #include "Input.h"
 #include "Camera.h"
 #include "CollisionHandler.h"
+#include "ObjectFactory.h"
+
+static Registrar<Warrior> registrar("PLAYER");
 
 Warrior::Warrior(Properties* props) : Character(props)
 {
@@ -39,6 +42,7 @@ void Warrior::Draw()
 //    box.y -= cam.Y;
 //    SDL_RenderDrawRect(Engine::GetInstance()->GetRenderer(), &box);
     m_Animation->Draw(m_Transform->X, m_Transform->Y, m_Width, m_Height, 1, 1, m_Flip);
+    m_Collider->Draw();
 
 }
 

@@ -6,6 +6,7 @@
 #include "Timer.h"
 #include "MapParser.h"
 #include "Camera.h"
+#include "ObjectFactory.h"
 
 Engine* Engine::s_Instance = nullptr;
 
@@ -59,10 +60,14 @@ bool Engine::Init()
     if(!TextureManager::GetInstance()->ParseTexture("assets/texture.tml")) m_IsRunning = false;
 
 
+    Properties* propsPlayer = new Properties("player", 100, 200, 136, 96);
+    GameObject* player = ObjectFactory::GetInstance()->CreateObject("PLAYER", propsPlayer);
 
-    Warrior* player = new Warrior(new Properties("player", 100, 200, 136, 96));
+    //Warrior* player = new Warrior(new Properties("player", 100, 200, 136, 96));
 
-    Enemy* boss = new Enemy(new Properties("boss_idle", 800, 100, 600, 500, SDL_FLIP_HORIZONTAL));
+    //Enemy* boss = new Enemy(new Properties("boss_idle", 800, 100, 600, 500, SDL_FLIP_HORIZONTAL));
+    GameObject* boss = ObjectFactory::GetInstance()->CreateObject("BOSS",
+     new Properties("boss_idle", 800, 100, 600, 500, SDL_FLIP_HORIZONTAL));
 
     m_GameObjects.push_back(player);
     m_GameObjects.push_back(boss);

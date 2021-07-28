@@ -26,6 +26,8 @@
 					<Add directory="Camera" />
 					<Add directory="Collision" />
 					<Add directory="Factory" />
+					<Add directory="States" />
+					<Add directory="State" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -48,6 +50,8 @@
 					<Add directory="Camera" />
 					<Add directory="Collision" />
 					<Add directory="Factory" />
+					<Add directory="States" />
+					<Add directory="State" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -96,6 +100,9 @@
 		<Unit filename="Physics/RigidBody.h" />
 		<Unit filename="Physics/Transform.h" />
 		<Unit filename="Physics/Vector2D.h" />
+		<Unit filename="States/GameState.h" />
+		<Unit filename="States/Menu.cpp" />
+		<Unit filename="States/Menu.h" />
 		<Unit filename="Timer/Timer.cpp" />
 		<Unit filename="Timer/Timer.h" />
 		<Unit filename="Vendor/tinystr.cpp" />
