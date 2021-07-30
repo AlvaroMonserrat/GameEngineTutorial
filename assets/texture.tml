@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UFT-8"?>
 <texture>
+
+	<texture id="btn_start_normal" source="assets/widget/btn_start_normal.png"/>
+	<texture id="btn_start_hookover" source="assets/widget/btn_start_hook_over.png"/>	
+	<texture id="btn_start_pressed" source="assets/widget/btn_start_pressed.png"/>	
+
 	<texture id="player_run" source="assets/images/run.png" />
 	<texture id="player_idle" source="assets/images/idle.png" />
 	<texture id="player_jump" source="assets/images/jump.png" />	

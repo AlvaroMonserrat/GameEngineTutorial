@@ -59,6 +59,8 @@ bool TextureManager::ParseTexture(std::string source)
             std::string id = e->Attribute("id");
             std::string src = e->Attribute("source");
 
+            std::cout << "id:" << id << std::endl;
+            std::cout << "src:" << src << std::endl;
             if(!Load(id, src))
                 return false;
         }
@@ -86,6 +88,17 @@ void TextureManager::Clean()
 
 }
 
+void TextureManager::DrawWidget(std::string id, int x, int y, int width, int height,float scaleXY, SDL_RendererFlip flip)
+{
+    SDL_Rect srcRect = {0, 0, width/scaleXY, height/scaleXY};
+
+    //SDL_Rect dstRect = {PackManager::->GetInstance()->GetPositionX(id), PackManager::->GetInstance()->GetPositionY(id)};
+    //std::cout << "width:" << width << std::endl;
+    SDL_Rect dstRect = {x, y, width, height};
+
+    SDL_RenderCopyEx(Engine::GetInstance()->GetRenderer(), m_TextureMap[id], &srcRect, &dstRect, 0, nullptr, flip);
+}
+
 void TextureManager::Draw(std::string id, int x, int y, int width, int height, float scaleX, float scaleY, float scrollRatio, SDL_RendererFlip flip)
 {
     SDL_Rect srcRect = {0, 0, width, height};
@@ -101,12 +114,6 @@ void TextureManager::Draw(std::string id, int x, int y, int width, int height, f
 
 void TextureManager::DrawFrame(std::string id, int x, int y, int width, int height, int row, int frame, SDL_RendererFlip flip)
 {
-//    std::cout << "ID: " << id << std::endl;
-//    std::cout << "x: " << x << std::endl;
-//    std::cout << "y: " << y << std::endl;
-//    std::cout << "frame: " <<frame << std::endl;
-//    std::cout << "width: " <<width << std::endl;
-//    std::cout << "height: " << height << std::endl;
 
     SDL_Rect srcRect = {width*frame, height*(row), width, height};
     Vector2D cam = Camera::GetInstance()->GetPosition();
