@@ -1,5 +1,5 @@
 #include "MenuGame.h"
-
+#include "PackManager.h"
 
 bool MenuGame::Init()
 {
@@ -7,9 +7,8 @@ bool MenuGame::Init()
     m_Ctxt = Engine::GetInstance()->GetRenderer();
 
     //Agregar Boton
-    btnStart = new Button("btn_start", 0, 0, 300, 200, 0.5);
-
-    btnOption = new Button("btn_start", 0, 200, 300, 200, 0.5);
+    PackManager::GetInstance()->AddWidget(new Button("btn_start", 0, 0, 300, 200, 0.5), MENU);
+    PackManager::GetInstance()->AddWidget(new Button("btn_start", 0, 200, 300, 200, 0.5), MENU);
 
     return true;
 }
@@ -27,13 +26,13 @@ void MenuGame::Update(float dt)
         SDL_Delay(200);
     }
 
-    if(btnStart->isClicked())
+    if(PackManager::GetInstance()->GetButton(MENU, START)->isClicked())
     {
         Engine::GetInstance()->ChangeFragment(GAME);
         SDL_Delay(200);
     }
-    btnStart->Update();
-    btnOption->Update();
+
+    PackManager::GetInstance()->UpdateAllWidget(MENU);
 
 
 }
@@ -42,6 +41,6 @@ void MenuGame::Render()
     SDL_SetRenderDrawColor(m_Ctxt, 69, 90, 100, 255);
     SDL_RenderClear(m_Ctxt);
 
-    btnStart->Draw();
-    btnOption->Draw();
+    PackManager::GetInstance()->DrawAllWidget(MENU);
+
 }

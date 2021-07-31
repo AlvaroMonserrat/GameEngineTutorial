@@ -1,11 +1,18 @@
 #ifndef MENUGAME_H
 #define MENUGAME_H
 
+#include <vector>
 #include "SDL2/SDL.h"
 #include "Engine.h"
 #include "FragmentGame.h"
 #include "Input.h"
 #include "Button.h"
+#include "Widget.h"
+
+enum{
+    START,
+    OPTIONS
+};
 
 class MenuGame : public FragmentGame
 {
@@ -16,8 +23,8 @@ class MenuGame : public FragmentGame
         virtual void Render();
 
     private:
-        Button* btnStart;
-        Button* btnOption;
+        //std::vector<Widget*> m_Widgets;
+
 };
 
 #endif // MENUGAME_H

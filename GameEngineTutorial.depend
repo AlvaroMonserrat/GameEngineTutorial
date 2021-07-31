@@ -257,15 +257,18 @@
 1627521879 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Fragment/FragmentGame.h
 	<SDL2/SDL.h>
 
-1627615224 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Fragment/MenuGame.cpp
+1627752102 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Fragment/MenuGame.cpp
 	"MenuGame.h"
+	"PackManager.h"
 
-1627615155 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Fragment/MenuGame.h
+1627694645 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Fragment/MenuGame.h
+	<vector>
 	"SDL2/SDL.h"
 	"Engine.h"
 	"FragmentGame.h"
 	"Input.h"
 	"Button.h"
+	"Widget.h"
 
 1627564785 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Fragment/MainGame.cpp
 	"MainGame.h"
@@ -282,11 +285,11 @@
 	"FragmentGame.h"
 	"Camera.h"
 
-1627615077 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Widgets/Button.cpp
+1627752090 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Widgets/Button.cpp
 	"Button.h"
 	"tinyxml.h"
 
-1627614761 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Widgets/Button.h
+1627752090 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Widgets/Button.h
 	<string>
 	"Widget.h"
 	"TextureManager.h"
@@ -294,6 +297,15 @@
 	"Input.h"
 	"Point.h"
 
-1627587725 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Widgets/Widget.h
+1627751982 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Widgets/Widget.h
 	<SDL2/SDL.h>
+
+1627752036 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/GUI/PackManager.cpp
+	"PackManager.h"
+
+1627752021 /home/amonserrat/Documents/C++2021/GameEngineTutorial/GUI/PackManager.h
+	<map>
+	<vector>
+	<SDL2/SDL.h>
+	"Widget.h"
 

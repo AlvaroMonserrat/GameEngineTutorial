@@ -31,6 +31,7 @@
 					<Add directory="Fragment" />
 					<Add directory="./" />
 					<Add directory="Widgets" />
+					<Add directory="GUI" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -58,6 +59,7 @@
 					<Add directory="Fragment" />
 					<Add directory="./" />
 					<Add directory="Widgets" />
+					<Add directory="GUI" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -94,6 +96,8 @@
 		<Unit filename="Fragment/MainGame.h" />
 		<Unit filename="Fragment/MenuGame.cpp" />
 		<Unit filename="Fragment/MenuGame.h" />
+		<Unit filename="GUI/PackManager.cpp" />
+		<Unit filename="GUI/PackManager.h" />
 		<Unit filename="Graphics/TextureManager.cpp" />
 		<Unit filename="Graphics/TextureManager.h" />
 		<Unit filename="Inputs/Input.cpp" />

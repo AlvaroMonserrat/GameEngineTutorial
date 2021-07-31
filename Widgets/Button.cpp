@@ -5,14 +5,22 @@ Button::Button(std::string widgetID, int x, int y, int width, int height, float 
 {
     //Cargar ID texture
     Parse(widgetID, "assets/widgets.aml");
-    m_ButtonPressed = false;
+
     m_WidgetID = widgetID;
     m_TextureID = m_MapTextureID[NORMAL];
+
     m_Scale = scale;
+
     m_Box = {x, y, width*m_Scale, height*m_Scale};
     //m_Box.x = (960 / 2)-((m_Box.w)/2);
     //m_Box.y = (640 / 2) - ((m_Box.h) / 2);
 }
+//
+//Button::Button(std::string widgetID, int x, int y, int width, int height, float scaleXY, Parameters parameters)
+//{
+//    Parse(widgetID, "assets/widgets.aml");
+//    PackManager::GetInstance()->AddWidget(this);
+//}
 
 void Button::Draw()
 {
