@@ -7,8 +7,9 @@ bool MenuGame::Init()
     m_Ctxt = Engine::GetInstance()->GetRenderer();
 
     //Agregar Boton
-    PackManager::GetInstance()->AddWidget(new Button("btn_start", 0, 0, 300, 200, 0.5), MENU);
-    PackManager::GetInstance()->AddWidget(new Button("btn_start", 0, 200, 300, 200, 0.5), MENU);
+    PackManager::GetInstance()->AddWidget(new Button("btn_start", 400, 250, 300, 200, 0.5), MENU);
+    PackManager::GetInstance()->AddWidget(new Button("btn_options", 400, 350, 300, 200, 0.5), MENU);
+    PackManager::GetInstance()->AddWidget(new Button("btn_exit", 400, 450, 300, 200, 0.5), MENU);
 
     return true;
 }
@@ -29,6 +30,12 @@ void MenuGame::Update(float dt)
     if(PackManager::GetInstance()->GetButton(MENU, START)->isClicked())
     {
         Engine::GetInstance()->ChangeFragment(GAME);
+        SDL_Delay(200);
+    }
+
+    if(PackManager::GetInstance()->GetButton(MENU, EXIT)->isClicked())
+    {
+        Engine::GetInstance()->ExitGame();
         SDL_Delay(200);
     }
 

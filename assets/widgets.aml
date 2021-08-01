@@ -5,4 +5,16 @@
 		<state textureID="btn_start_hookover"/>
 		<state textureID="btn_start_pressed"/>
 	</button>
+	
+	<button id="btn_options" states="3" width="300" height="200">
+		<state textureID="btn_options_normal"/>
+		<state textureID="btn_options_hookover"/>
+		<state textureID="btn_options_pressed"/>
+	</button>
+	
+		<button id="btn_exit" states="3" width="300" height="200">
+		<state textureID="btn_exit_normal"/>
+		<state textureID="btn_exit_hookover"/>
+		<state textureID="btn_exit_pressed"/>
+	</button>
 </widgets>

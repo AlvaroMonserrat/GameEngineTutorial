@@ -4,6 +4,14 @@
 	<texture id="btn_start_normal" source="assets/widget/btn_start_normal.png"/>
 	<texture id="btn_start_hookover" source="assets/widget/btn_start_hook_over.png"/>	
 	<texture id="btn_start_pressed" source="assets/widget/btn_start_pressed.png"/>	
+	
+	<texture id="btn_options_normal" source="assets/widget/btn_options_normal.png"/>
+	<texture id="btn_options_hookover" source="assets/widget/btn_options_hook_over.png"/>	
+	<texture id="btn_options_pressed" source="assets/widget/btn_options_pressed.png"/>	
+	
+	<texture id="btn_exit_normal" source="assets/widget/btn_exit_normal.png"/>
+	<texture id="btn_exit_hookover" source="assets/widget/btn_exit_hook_over.png"/>	
+	<texture id="btn_exit_pressed" source="assets/widget/btn_exit_pressed.png"/>	
 
 	<texture id="player_run" source="assets/images/run.png" />
 	<texture id="player_idle" source="assets/images/idle.png" />

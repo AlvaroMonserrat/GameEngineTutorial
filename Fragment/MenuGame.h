@@ -11,7 +11,8 @@
 
 enum{
     START,
-    OPTIONS
+    OPTIONS,
+    EXIT
 };
 
 class MenuGame : public FragmentGame
