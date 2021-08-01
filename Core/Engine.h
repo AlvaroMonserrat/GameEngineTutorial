@@ -5,12 +5,12 @@
 #include <vector>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
-#include "GameMap.h"
-#include "GameObject.h"
-#include "GameState.h"
+#include "FragmentGame.h"
 
 #define SCREEN_WIDTH 960
 #define SCREEN_HEIGHT 640
+
+enum{MENU, GAME};
 
 class Engine
 {
@@ -28,13 +28,14 @@ public:
     void Render();
     void Events();
 
-    void PopState();
-    void PushState(GameState* current);
-    void ChangeState(GameState* target);
+    //void PopFragment();
+    //void PushFragment(FragmentGame* current);
+    void ChangeFragment(int fragment);
 
-    inline GameMap* GetMap(){ return m_LevelMap; }
+    //inline GameMap* GetMap(){ return m_LevelMap; }
 
     inline bool isRunning(){ return m_IsRunning; }
+    inline bool ExitGame(){ m_IsRunning = false; }
 
     inline SDL_Renderer* GetRenderer(){ return m_Renderer; }
 
@@ -42,14 +43,15 @@ private:
     Engine();
     bool m_IsRunning;
 
-    GameMap* m_LevelMap;
     SDL_Window* m_Window;
     SDL_Renderer* m_Renderer;
     SDL_Surface* m_SurfaceScreen;
 
     static Engine* s_Instance;
 
-    std::vector<GameObject*> m_GameObjects;
+    std::vector<FragmentGame*> m_FragmentGames;
+    int currentFragment;
+
 
 };
 

@@ -4,16 +4,14 @@
 	"Engine.h"
 	"Timer.h"
 
-1627425039 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Core/Engine.h
+1627760687 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Core/Engine.h
 	<iostream>
 	<vector>
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
-	"GameMap.h"
-	"GameObject.h"
-	"GameState.h"
+	"FragmentGame.h"
 
-1627412693 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Core/Engine.cpp
+1627564785 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Core/Engine.cpp
 	"Engine.h"
 	"TextureManager.h"
 	"Input.h"
@@ -23,13 +21,15 @@
 	"MapParser.h"
 	"Camera.h"
 	"ObjectFactory.h"
+	"MainGame.h"
+	"MenuGame.h"
 
-1627010271 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Graphics/TextureManager.h
+1627584396 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Graphics/TextureManager.h
 	<string>
 	<SDL2/SDL.h>
 	<map>
 
-1627010181 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Graphics/TextureManager.cpp
+1627602882 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Graphics/TextureManager.cpp
 	"TextureManager.h"
 	"Engine.h"
 	"TextureManager.h"
@@ -83,10 +83,11 @@
 1626915326 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Physics/RigidBody.h
 	"Vector2D.h"
 
-1626910556 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Inputs/Input.h
+1627586943 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Inputs/Input.h
 	"SDL2/SDL.h"
+	"Point.h"
 
-1626911742 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Inputs/Input.cpp
+1627587651 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Inputs/Input.cpp
 	"Input.h"
 	"Engine.h"
 
@@ -167,15 +168,16 @@
 1626825643 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Physics/Point.h
 	<iostream>
 
-1626883191 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Collision/CollisionHandler.cpp
+1627584810 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Collision/CollisionHandler.cpp
 	"CollisionHandler.h"
-	"Engine.h"
+	"MapParser.h"
 
-1626836102 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Collision/CollisionHandler.h
+1627584748 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Collision/CollisionHandler.h
 	"SDL2/SDL.h"
 	<vector>
 	"TileLayer.h"
 	"GameMap.h"
+	"Point.h"
 
 1627411399 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Physics/Collider.h
 	"SDL2/SDL.h"
@@ -192,7 +194,7 @@
 	<SDL2/SDL.h>
 	"Animation.h"
 
-1627308583 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Animation/SeqAnimation.cpp
+1627596586 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Animation/SeqAnimation.cpp
 	"SeqAnimation.h"
 	<iostream>
 	"tinyxml.h"
@@ -251,4 +253,59 @@
 	"GameMap.h"
 	"GameObject.h"
 	"Engine.h"
+
+1627521879 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Fragment/FragmentGame.h
+	<SDL2/SDL.h>
+
+1627784789 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Fragment/MenuGame.cpp
+	"MenuGame.h"
+	"PackManager.h"
+
+1627760734 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Fragment/MenuGame.h
+	<vector>
+	"SDL2/SDL.h"
+	"Engine.h"
+	"FragmentGame.h"
+	"Input.h"
+	"Button.h"
+	"Widget.h"
+
+1627564785 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Fragment/MainGame.cpp
+	"MainGame.h"
+
+1627521879 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Fragment/MainGame.h
+	<vector>
+	"Engine.h"
+	"Input.h"
+	"TextureManager.h"
+	"MapParser.h"
+	"GameObject.h"
+	"ObjectFactory.h"
+	"GameMap.h"
+	"FragmentGame.h"
+	"Camera.h"
+
+1627752090 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/Widgets/Button.cpp
+	"Button.h"
+	"tinyxml.h"
+
+1627752090 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Widgets/Button.h
+	<string>
+	"Widget.h"
+	"TextureManager.h"
+	"CollisionHandler.h"
+	"Input.h"
+	"Point.h"
+
+1627751982 /home/amonserrat/Documents/C++2021/GameEngineTutorial/Widgets/Widget.h
+	<SDL2/SDL.h>
+
+1627752160 source:/home/amonserrat/Documents/C++2021/GameEngineTutorial/GUI/PackManager.cpp
+	"PackManager.h"
+
+1627752021 /home/amonserrat/Documents/C++2021/GameEngineTutorial/GUI/PackManager.h
+	<map>
+	<vector>
+	<SDL2/SDL.h>
+	"Widget.h"
 

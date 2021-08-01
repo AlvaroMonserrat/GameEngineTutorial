@@ -28,6 +28,10 @@
 					<Add directory="Factory" />
 					<Add directory="States" />
 					<Add directory="State" />
+					<Add directory="Fragment" />
+					<Add directory="./" />
+					<Add directory="Widgets" />
+					<Add directory="GUI" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -52,6 +56,10 @@
 					<Add directory="Factory" />
 					<Add directory="States" />
 					<Add directory="State" />
+					<Add directory="Fragment" />
+					<Add directory="./" />
+					<Add directory="Widgets" />
+					<Add directory="GUI" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -83,6 +91,13 @@
 		<Unit filename="Core/Engine.h" />
 		<Unit filename="Factory/ObjectFactory.cpp" />
 		<Unit filename="Factory/ObjectFactory.h" />
+		<Unit filename="Fragment/FragmentGame.h" />
+		<Unit filename="Fragment/MainGame.cpp" />
+		<Unit filename="Fragment/MainGame.h" />
+		<Unit filename="Fragment/MenuGame.cpp" />
+		<Unit filename="Fragment/MenuGame.h" />
+		<Unit filename="GUI/PackManager.cpp" />
+		<Unit filename="GUI/PackManager.h" />
 		<Unit filename="Graphics/TextureManager.cpp" />
 		<Unit filename="Graphics/TextureManager.h" />
 		<Unit filename="Inputs/Input.cpp" />
@@ -100,11 +115,6 @@
 		<Unit filename="Physics/RigidBody.h" />
 		<Unit filename="Physics/Transform.h" />
 		<Unit filename="Physics/Vector2D.h" />
-		<Unit filename="States/GameState.h" />
-		<Unit filename="States/Menu.cpp" />
-		<Unit filename="States/Menu.h" />
-		<Unit filename="States/Play.cpp" />
-		<Unit filename="States/Play.h" />
 		<Unit filename="Timer/Timer.cpp" />
 		<Unit filename="Timer/Timer.h" />
 		<Unit filename="Vendor/tinystr.cpp" />
@@ -113,6 +123,9 @@
 		<Unit filename="Vendor/tinyxml.h" />
 		<Unit filename="Vendor/tinyxmlerror.cpp" />
 		<Unit filename="Vendor/tinyxmlparser.cpp" />
+		<Unit filename="Widgets/Button.cpp" />
+		<Unit filename="Widgets/Button.h" />
+		<Unit filename="Widgets/Widget.h" />
 		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>

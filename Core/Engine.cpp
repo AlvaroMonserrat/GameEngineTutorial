@@ -7,6 +7,8 @@
 #include "MapParser.h"
 #include "Camera.h"
 #include "ObjectFactory.h"
+#include "MainGame.h"
+#include "MenuGame.h"
 
 Engine* Engine::s_Instance = nullptr;
 
@@ -48,31 +50,32 @@ bool Engine::Init()
     }
 
 
+    //Cargar Mapas
     if(!MapParser::GetInstance()->Load())
     {
         std::cout << "Error al cargar el mapa" << std::endl;
         m_IsRunning = false;
     }
 
+    //Cargar todas las texturas
+    if(!TextureManager::GetInstance()->ParseTexture("assets/texture.tml")) return false;
 
-    m_LevelMap = MapParser::GetInstance()->GetMaps("map");
+    //Iniciar con Menu
+    currentFragment = MENU;
 
-    if(!TextureManager::GetInstance()->ParseTexture("assets/texture.tml")) m_IsRunning = false;
+    m_FragmentGames.push_back(new MenuGame());
+    m_FragmentGames.push_back(new MainGame());
 
+    for(unsigned int i=0; i != m_FragmentGames.size(); i++)
+    {
+        if(!m_FragmentGames[i]->Init())
+        {
+            std::cout << "Error al Iniciar el Juego: " << i <<"\n";
+            m_IsRunning = false;
 
-    Properties* propsPlayer = new Properties("player", 100, 200, 136, 96);
-    GameObject* player = ObjectFactory::GetInstance()->CreateObject("PLAYER", propsPlayer);
+        }
+    }
 
-    //Warrior* player = new Warrior(new Properties("player", 100, 200, 136, 96));
-
-    //Enemy* boss = new Enemy(new Properties("boss_idle", 800, 100, 600, 500, SDL_FLIP_HORIZONTAL));
-    GameObject* boss = ObjectFactory::GetInstance()->CreateObject("BOSS",
-     new Properties("boss_idle", 800, 100, 600, 500, SDL_FLIP_HORIZONTAL));
-
-    m_GameObjects.push_back(player);
-    m_GameObjects.push_back(boss);
-
-    Camera::GetInstance()->SetTarget(player->GetOrigin());
 
     return m_IsRunning;
 }
@@ -80,13 +83,10 @@ bool Engine::Init()
 bool Engine::Clean()
 {
 
-    for(unsigned int i=0; i!=m_GameObjects.size(); i++)
+    for(unsigned int i=0; i != m_FragmentGames.size(); i++)
     {
-        m_GameObjects[i]->Clean();
+        m_FragmentGames[i]->Exit();
     }
-
-    TextureManager::GetInstance()->Clean();
-    MapParser::GetInstance()->Clean();
 
     SDL_DestroyRenderer(m_Renderer);
     SDL_DestroyWindow(m_Window);
@@ -107,46 +107,37 @@ void Engine::Quit()
 
 void Engine::Update()
 {
+    //Actualizar tiempo
     float dt = Timer::GetInstance()->GetDeltaTime();
-    m_LevelMap->Update();
 
+    m_FragmentGames[currentFragment]->Update(dt);
 
-    for(unsigned int i=0; i!=m_GameObjects.size(); i++)
-    {
-        m_GameObjects[i]->Update(dt);
-    }
-
-    Camera::GetInstance()->Update(dt);
 }
 
 void Engine::Render()
 {
+    //Color de Fondo del juego
     SDL_SetRenderDrawColor(m_Renderer, 124, 210, 254, 255);
     SDL_RenderClear(m_Renderer);
 
-    TextureManager::GetInstance()->Draw("bg", 0, 0, 1980, 1080, 1.5, 1.5, 0.4);
-    m_LevelMap->Render();
-
-
-    for(unsigned int i=0; i!=m_GameObjects.size(); i++)
-    {
-
-        m_GameObjects[i]->Draw();
-
-    }
-
-
+    m_FragmentGames[currentFragment]->Render();
 
     SDL_RenderPresent(m_Renderer);
 }
 
 void Engine::Events()
 {
+    //Gestionar Eventos del Juego
     Input::GetInstance()->Listen();
+}
+
+void Engine::ChangeFragment(int fragment)
+{
+    currentFragment = fragment;
 }
 
 Engine::Engine()
 {
-
+    std::cout << "El motor de Juego se ha iniciado\n";
 }
 

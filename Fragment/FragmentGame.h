@@ -1,18 +1,17 @@
-#ifndef GAMESTATE_H
-#define GAMESTATE_H
+#ifndef FRAGMENTGAME_H
+#define FRAGMENTGAME_H
 
 #include <SDL2/SDL.h>
 
-class GameState
+class FragmentGame
 {
     public:
         virtual bool Init() = 0;
         virtual bool Exit() = 0;
-        virtual void Update() = 0;
+        virtual void Update(float dt) = 0;
         virtual void Render() = 0;
     protected:
         SDL_Renderer* m_Ctxt;
-
 };
 
-#endif // GAMESTATE_H
+#endif // FRAGMENTGAME_H

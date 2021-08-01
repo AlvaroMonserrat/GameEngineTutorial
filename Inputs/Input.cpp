@@ -16,17 +16,23 @@ void Input::Listen()
     {
         switch(event.type)
         {
-        case SDL_QUIT:
-            Engine::GetInstance()->Quit();
-            break;
+            case SDL_QUIT:
+                Engine::GetInstance()->Quit();
+                break;
 
-        case SDL_KEYDOWN:
-            KeyDown();
-            break;
+            case SDL_KEYDOWN:
+                KeyDown();
+                break;
 
-        case SDL_KEYUP:
-            KeyUP();
-            break;
+            case SDL_KEYUP:
+                KeyUP();
+                break;
+
+            case SDL_MOUSEMOTION:
+                MotionMouse(event.motion.x, event.motion.y);
+                break;
+
+
         }
     }
 }
@@ -34,6 +40,13 @@ void Input::Listen()
 bool Input::GetKeyDown(SDL_Scancode key)
 {
     return m_KeyStates[key] == 1;
+}
+
+bool Input::GetMousePressLeft()
+{
+    SDL_PumpEvents();
+    m_MouseStates = SDL_GetMouseState(nullptr, nullptr);
+    return SDL_BUTTON_LEFT && m_MouseStates;
 }
 
 void Input::KeyUP()
@@ -44,6 +57,17 @@ void Input::KeyUP()
 void Input::KeyDown()
 {
     m_KeyStates = SDL_GetKeyboardState(nullptr);
+}
+
+void Input::MotionMouse(int x, int y)
+{
+    m_MouseXY = {x, y};
+
+}
+
+Point Input::GetPoint()
+{
+    return m_MouseXY;
 }
 
 // return 1 or -1 according to the direction of the key pressed or 0 if nothing is pressed
@@ -67,5 +91,5 @@ int Input::GetAxisKey(Axis axis)
         default:
             return 0;
     }
-
 }
+

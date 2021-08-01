@@ -83,7 +83,7 @@ void SeqAnimation::Parse(std::string source)
 
             for(TiXmlElement* frame=e->FirstChildElement(); frame!=nullptr; frame=frame->NextSiblingElement())
             {
-                std::cout << "d: " << frame->Attribute("textureID") << std::endl;
+                //std::cout << "d: " << frame->Attribute("textureID") << std::endl;
                 seq.TextureIDs.push_back(frame->Attribute("textureID"));
             }
 
